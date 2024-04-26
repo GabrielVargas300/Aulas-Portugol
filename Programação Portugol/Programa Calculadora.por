@@ -3,30 +3,37 @@ programa
 	
 	funcao inicio()
 	{
-		caracter operador
-		inteiro n1,n2
-		escreva("Digite o operador de conta :\n")
-		leia(operador)
-		escreva("\nDigite o primeiro número\n")
-		leia(n1)
-		escreva("\nDigite o segunto número\n")
-		leia(n2)
+	/*Programa de Conversão dia da semana*/
+	inteiro n1
+	escreva("Digite o dia da Semana\n")
+	leia(n1)
+	se (n1> 0 e n1<=7){
+	
 
-		escolha(operador){
-			caso '+':
-			escreva("A soma do" , n1, "+" , n2, "é : " ,(n1+n2))
-			pare
-			caso '-':
-			escreva("A subtração do" , n1, "-" , n2, "é : " ,(n1-n2))
-			pare
-			caso '*':
-			escreva("A multiplicador do" , n1, "*" , n2, "é : " ,(n1*n2))
-			pare
-			caso '/':
-			escreva("A divisão do" , n1, "/" , n2, "é : " ,(n1/n2))
-			pare
-			
-			}
+	escolha(n1){
+		caso 1:
+		escreva("Hoje é Domingo")
+		pare
+		caso 2:
+		escreva("Hoje é Terça")
+		pare
+		caso 3:
+		escreva("Hoje é Terça")
+		pare
+		caso 4:
+		escreva("Hoje é Quarta")
+		pare
+		caso 5:
+		escreva("Hoje é Quinto")
+		pare
+		caso 6:
+		escreva("Hoje é Sexta")
+		pare
+		caso 7:
+		escreva("Hoje é Sábado")
+		pare
+	}
+	}
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -34,7 +41,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 586; 
+ * @POSICAO-CURSOR = 298; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
