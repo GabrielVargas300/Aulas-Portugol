@@ -45,7 +45,7 @@ programa
 //fim funcao opção
 
 	funcao listar(cadeia nome){
-	para(inteiro l = 0; l< 6; l++){
+	para(inteiro l = 0; l< 4; l++){
 	     	se(pessoa[l][0] == nome){
 	     		escreva("\n Listar\n-Nome: " , pessoa[l][0] +"\n-Idade: ", pessoa[l][1] +"\n-Genero: ", pessoa[l][2]+"\n-Estado Civil: ", pessoa[l][3]+"\n-Numero de Telefone: ", pessoa[l][4]+"\n-Cpf: ", pessoa[l][5])
 	     	}
@@ -139,6 +139,8 @@ programa
 }
 //fim da função cadastro de entereço
 
+
+
 	funcao inicio(){
 
 	escreva("            Cadastro do Orçamento            \n\n")
@@ -154,8 +156,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4239; 
- * @DOBRAMENTO-CODIGO = [17, 46, 55, 100];
+ * @POSICAO-CURSOR = 1550; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pessoa, 13, 8, 6}-{endereco, 14, 8, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
