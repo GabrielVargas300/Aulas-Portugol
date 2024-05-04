@@ -1,5 +1,6 @@
 programa
 {
+	inclua biblioteca Tipos --> t
 	//-Definir os materiais em vetor
 	//-Criar uma calculadora com os valores dos produtos(soma  e multiplicação)
 	//-Criar um cadastro de pessoas(Nome, endereço,movel,Numero de telefone)
@@ -12,8 +13,8 @@ programa
 
 	cadeia pessoa[4][6]
 	cadeia endereco[4][6]
-	cadeia entrega[3][5] 
-	cadeia materiais[3][2]={{"MDF","Parafuso"},{"Fita Borda ","Adesivo de Contato"},{"MPD","Puxador"}}
+	cadeia entrega[4][7]= {{"","0","0","0","0","0","0"},{"","0","0","0","0","0","0"},{"","0","0","0","0","0","0"},{"","0","0","0","0","0","0"}} 
+	cadeia materiais[6][2]={{"MDF","55.0"},{"MPD","35.5"},{"Puxador","12.99"},{"Caixa de Parafuso","10.0"},{"Fita de Borda ","6.5"},{"Adesivo de Contato ","12.5"}}
 
 	funcao Opcao(){
 		cadeia nome, numero 
@@ -23,9 +24,9 @@ programa
 		escreva("MENU DE OPÇÕES:\n")
 	     escreva("1) Adicionar Cliente\n")
 	     escreva("2) Listar o Cliente\n")
-	     escreva("3) Remover Nome\n")
+	     escreva("3) nulo\n")
 	     escreva("0) Sair\n")
-	     escreva("Escolha sua Opção:\n")
+	     escreva("Escolha sua Opção: ")
 		leia(opcao)
 
 		   escolha(opcao){
@@ -36,6 +37,7 @@ programa
 	     	pare
 
 	     caso 3:
+	     	cadastroMateriais()
 	     	pare
 	     	
 	     caso 0:
@@ -94,6 +96,7 @@ programa
 	}
 	escreva("\nEm seguida iniciaremos com o cadastro do endereço\n")
 	cadastroEndereco(1)
+	cadastroMateriais()
 	Opcao()
 }
 //fim da função cadastro de pessoa
@@ -139,7 +142,46 @@ programa
 }
 //fim da função cadastro de entereço
 
+	funcao cadastroMateriais(){
+	inteiro opcao= 0, escolher=0
+     real qtaItens =0.0
+     real valTotal=0
+     
+     
+     	
+      escreva("\t\tLista de materias com preço\n")
+      escreva("\t\tEscolha os itens desejados\n")
+      para(inteiro l = 0; l < 6; l++){
+        escreva (l+1," ")
+      para(inteiro c = 0;  c < 2; c++){
+          escreva(materiais[l][c]," ")
+       		 }
+       		 
+          escreva("\n")
+     		 }	
+      enquanto (escolher <= 1){
+             escreva("Opção desejada: ")
+             leia(opcao)
+             escreva("\nQuantidade de Itens: ")
+		   leia(qtaItens)
+          escreva("Deseja adicionar mais itens?")
+          escreva("\n1- Sim")
+          escreva("\n2- Não")
+          escreva("\nopção: ")
+          leia(escolher)
+          entrega[0][opcao] = t.real_para_cadeia(qtaItens)
+               	para(inteiro l = 0; l <= 3; l++){
+	     entrega[l][0] = pessoa[l][5]	}
+      }
+      	para(inteiro l = 0;l < 6 ; l++){
+      	real qtaItem =t.cadeia_para_real(entrega[0][l+1])
+		valTotal+=t.cadeia_para_real(materiais[l][1]) * qtaItem
+		
+      	}
+      	escreva(valTotal)
 
+}
+//Fim da função cadastro de material
 
 	funcao inicio(){
 
@@ -156,9 +198,10 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1550; 
+ * @POSICAO-CURSOR = 5299; 
+ * @DOBRAMENTO-CODIGO = [18, 48, 57, 103];
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {pessoa, 13, 8, 6}-{endereco, 14, 8, 8};
+ * @SIMBOLOS-INSPECIONADOS = {pessoa, 14, 8, 6}-{entrega, 16, 8, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
