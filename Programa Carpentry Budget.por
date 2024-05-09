@@ -146,9 +146,7 @@ programa
 	inteiro opcao= 0, escolher=0
      real qtaItens =0.0
      real valTotal=0
-     
-     
-     	
+          			
       escreva("\t\tLista de materias com preço\n")
       escreva("\t\tEscolha os itens desejados\n")
       para(inteiro l = 0; l < 6; l++){
@@ -164,17 +162,18 @@ programa
              leia(opcao)
              escreva("\nQuantidade de Itens: ")
 		   leia(qtaItens)
-          escreva("Deseja adicionar mais itens?")
-          escreva("\n1- Sim")
-          escreva("\n2- Não")
-          escreva("\nopção: ")
-          leia(escolher)
+        		escreva("Deseja adicionar mais itens?")
+         		escreva("\n1- Sim")
+          	escreva("\n2- Não")
+          	escreva("\nopção: ")
+          		leia(escolher)
+          		
           entrega[0][opcao] = t.real_para_cadeia(qtaItens)
-               	para(inteiro l = 0; l <= 3; l++){
-	     entrega[l][0] = pessoa[l][5]	}
-      }
-      	para(inteiro l = 0;l < 6 ; l++){
-      	real qtaItem =t.cadeia_para_real(entrega[0][l+1])
+
+	     
+    					  }
+      	para(inteiro l = 1;l < 7 ; l++){
+      	real qtaItem =t.cadeia_para_real(entrega[0][l])
 		valTotal+=t.cadeia_para_real(materiais[l][1]) * qtaItem
 		
       	}
@@ -198,10 +197,10 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5299; 
- * @DOBRAMENTO-CODIGO = [18, 48, 57, 103];
+ * @POSICAO-CURSOR = 5402; 
+ * @DOBRAMENTO-CODIGO = [18, 48, 57];
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {pessoa, 14, 8, 6}-{entrega, 16, 8, 7};
+ * @SIMBOLOS-INSPECIONADOS = {pessoa, 14, 8, 6}-{endereco, 15, 8, 8}-{entrega, 16, 8, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
