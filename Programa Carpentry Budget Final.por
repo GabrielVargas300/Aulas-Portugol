@@ -235,7 +235,7 @@ cadastroMateriais()
 		
 		escreva("\t\tOrçamento\t\t\n\n")
 		
-    	escreva("\tDados do cliente\t\n")
+    	escreva("\tDados do cliente\t\n\n")
       para (inteiro l = 0; l < 4; l++){
       	se(cpf == pessoa[l][5]){
         para(inteiro c = 0; c < 6; c++){
@@ -264,7 +264,7 @@ cadastroMateriais()
         }
        }
       
-      escreva("\tDados do endereço do cliente\t\n")
+      escreva("\n\tDados do endereço do cliente\t\n\n")
       para (inteiro l = 0; l < 4; l++){
       se(cpf == endereco[l][0]){
         para(inteiro c = 1; c < 6; c++){
@@ -291,7 +291,7 @@ cadastroMateriais()
        }
       }
 
-      escreva("\tQuantidade final dos produtos\t\n")
+      escreva("\n\tQuantidade final dos produtos\t\n\n1")
       para (inteiro l = 0; l < 4; l++){
       se(cpf == entrega[l][0]){
         para(inteiro c = 0; c < 6;c++){
@@ -342,7 +342,7 @@ cadastroMateriais()
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5554; 
+ * @POSICAO-CURSOR = 6304; 
  * @DOBRAMENTO-CODIGO = [21, 57, 62, 71, 110];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pessoa, 14, 8, 6}-{endereco, 15, 8, 8}-{entrega, 16, 8, 7};
