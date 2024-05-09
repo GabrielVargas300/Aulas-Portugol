@@ -21,32 +21,43 @@ programa
 	funcao Opcao(){
 		cadeia nome, numero 
 		inteiro opcao
-		escreva("Olá!\n")
-		escreva("para iniciar selecione a opção que deseje no menu:\n\n")
+		
+		escreva("Para iniciar selecione a opção que deseje no menu:\n\n")
 		escreva("MENU DE OPÇÕES:\n")
 	     escreva("1) Adicionar Cliente\n")
-	     escreva("2) Listar o Cliente\n")
-	     escreva("3) nulo\n")
-	     escreva("0) Sair\n")
+	     escreva("2) Nulo\n")
+	     escreva("3) Test\n")
+	     escreva("4) Sair\n")
 	     escreva("Escolha sua Opção: ")
 		leia(opcao)
 
-		   escolha(opcao){
-	     	caso 1: cadastroPessoa() pare
-	     	    
-	     caso 2:leia(nome)
-	     	listar(nome)
-	     	pare
-
-	     caso 3:
+		 se(opcao== 1){
+	     	 cadastroPessoa() 
+		 		}
+		 		
+	     senao se(opcao == 2){
+	    		}
+	    		
+	     senao se(opcao == 3){
 	     	cadastroMateriais()
-	     	pare
-	     	
-	     caso 0:
-
-		}
+	    		}
+	    		
+	     senao se(opcao == 4){
+			fim()
+				}
+				
+		 senao se(opcao > 4 ou opcao < 1){
+          limpa()
+          escreva("Esse é um dígito inválido, insira novamente!!\n")
+          Opcao()
 	}
+}
 //fim funcao opção
+
+	funcao vazio fim(){
+        escreva("Obrigado!! o programa irá se encerrar!!")
+	}
+//fim função fim
 
 	funcao listar(cadeia nome){
 	para(inteiro l = 0; l< 4; l++){
@@ -55,10 +66,10 @@ programa
 	     	}
 	}
 }
-//fim funcao listar
+//fim função listar
 		     	
 	funcao cadastroPessoa(){
-
+	limpa()
 //linha(l) coluna(c)
 	escreva("\nAbaixo siga o processo de cadastro do cliente,ok?\n")
 	escreva("Vamos iniciar com o cadastro de pessoa:\n")
@@ -92,17 +103,15 @@ programa
 					
 
 	cadastroEndereco()
-	cadastroMateriais()
-	Opcao()
+	
 }
 //fim da função cadastro de pessoa
 
 	funcao cadastroEndereco(){
-
+	limpa()
 //linha(l) coluna(c)
 		escreva("\nEm seguida iniciaremos com o cadastro do endereço\n")
 		
-		inteiro linha = 9999999, coluna = 999999
 		para(inteiro l = 0; l < 4; l++){
 			se (endereco[l][0] == ""){
 	     	para(inteiro c = 0; c < 6; c++){
@@ -142,33 +151,43 @@ cadastroMateriais()
 //fim da função cadastro de entereço
 
 	funcao cadastroMateriais(){
-		
-	inteiro opcao= 0, escolher=0
-     real qtaItens =0.0
-     
-     
+ limpa()
       escreva("\t\tLista de materias com preço\n")
       escreva("\t\tEscolha os itens desejados\n")
 
-	inteiro linha = 9999999, coluna = 999999
 		para(inteiro l = 0; l < 4; l++){
-	     para(inteiro c = 0; c < 6; c++){
-	     	se (pessoa[l][c] == "" e linha == 9999999 e coluna == 999999){
-	     		linha  = l
-	     		coluna = c
+			se(entrega[l][0] == ""){
+	     para(inteiro c = 0; c < 6; c++){	     	
+	     	
+	     	escolha(c){
+	     	caso 0:
+	     	entrega[l][c] = cpf
+	     		pare
 	     	 }
+	     	 se (entrega[l][c] != entrega[l][0]){
+	     			
+	        }
+	     }
+	     escolhe()
+	     	 pare
+	     
 	        }
 		}
-	     	//nesse momento estou atribuinho a primeira coluna da matriz cadastro de material o cpf da 5 coluna da matriz pessoa
-	     	se (entrega[linha][coluna] == "" e coluna == 0){
-	     	entrega[linha][coluna] = cpf
-	     	
+	}
+//nesse momento estou atribuinho a primeira coluna da matriz cadastro de material o cpf da 5 coluna da matriz pessoa
+
+	funcao escolhe(){     	
+	     			
+	inteiro opcao= 0, escolher=0
+    real qtaItens =0.0
+     
+     
 	     	
 	enquanto (escolher <= 1){
-      para(inteiro l = 0; l < 6; l++){
-        escreva (l+1," ")
-      para(inteiro c = 0;  c < 2; c++){
-          escreva(materiais[l][c]," ")
+      para(inteiro m = 0; m < 6; m++){
+        escreva (m+1," ")
+      para(inteiro v = 0;  v < 2; v++){
+          escreva(materiais[m][v]," ")
        		 }
        		 
           escreva("\n")
@@ -177,53 +196,94 @@ cadastroMateriais()
         escreva("\nOpção desejada: ")
         	leia(opcao)
         	se (opcao < 1 ou opcao > 6){
-         	 escreva("Por favor digite uma opção válida!!\n")
+         	 escreva("\nPor favor digite uma opção válida!!\n")
            cadastroMateriais()
         		}
+        		//validação com loop
+        		
         escreva("\nQuantidade de Itens: ")
 		leia(qtaItens)
 		entrega[0][opcao] = t.real_para_cadeia(qtaItens)
 		   
-        escreva("Deseja adicionar mais itens?")
+        escreva("\nDeseja adicionar mais itens?")
         escreva("\n1- Sim")
         escreva("\n2- Não")
-        escreva("\nopção: ")
+        escreva("\nopção: ", "\n")
         	leia(escolher)
-        	
+        	limpa()
      	}
-      	para(inteiro l = 0;l < 6 ; l++){
-      	real qtaItem =t.cadeia_para_real(entrega[0][l+1])
+     	// soma total
+     	
+      	para(inteiro i = 0;i < 6 ; i++){
+      	real qtaItem =t.cadeia_para_real(entrega[0][i+1])
       	
-		valTotal+=t.cadeia_para_real(materiais[l][1]) * qtaItem
+		valTotal+=t.cadeia_para_real(materiais[i][1]) * qtaItem
 		
       	}
-      	escreva("\nTotal do Pedido: "+valTotal)
-			
+      	
+		listagem()	
 	}
-	listagem()
-}
-	
 //Fim da função cadastro de material
 
 	funcao listagem() {
+		limpa()
+		
+		escreva("\t\tOrçamento\t\t\n\n")
 		
     	escreva("\tDados do cliente\t\n")
       para (inteiro l = 0; l < 4; l++){
       	se(cpf == pessoa[l][5]){
         para(inteiro c = 0; c < 6; c++){
-        	//
+        	se(c == 0){
+        	escreva("Nome: ")
+        	}
+        	se(c == 1){
+        	escreva("Idade: ")
+        	}
+        	se(c == 2){
+        	escreva("Genero: ")
+        	}
+        	se(c == 3){
+        	escreva("Estado Civil: ")
+        	}
+        	se(c == 4){
+        	escreva("Telefone: ")
+        	}
+        	se(c == 5){
+        	escreva("CPF: ")
+       	 	}
           escreva(pessoa[l][c],"\n")
-          
-        }
-        }
-      }
 
-      escreva("\tDados da entrega do cliente\t\n")
+        	
+         }
+        }
+       }
+      
+      escreva("\tDados do endereço do cliente\t\n")
       para (inteiro l = 0; l < 4; l++){
       se(cpf == endereco[l][0]){
         para(inteiro c = 1; c < 6; c++){
+        	
+        	se(c == 1){
+        	escreva("Casa: ")
+        	}
+        	se(c == 2){
+        	escreva("Rua: ")
+        	}
+        	se(c == 3){
+        	escreva("Quadra: ")
+        	}
+        	se(c == 4){
+        	escreva("Bairro: ")
+        	}
+        	se(c == 5){
+        	escreva("Cidade/Estado: ")
+       	 	}
           escreva(endereco[l][c],"\n")
-        }}
+
+
+        }
+       }
       }
 
       escreva("\tQuantidade final dos produtos\t\n")
@@ -231,18 +291,25 @@ cadastroMateriais()
       se(cpf == entrega[l][0]){
         para(inteiro c = 0; c < 6;c++){
         	
-        	escreva("Produto:")
-        	para(inteiro m = 0; m < 2; m++){
-          escreva(materiais[c][m],"\t")
-        	}
-        	se( entrega[l][c] != cpf){
-          escreva(entrega[l][c],"\n")
-        }}}
-      }
+      escreva("Produto:")
+     	 para(inteiro m = 0; m < 2; m++){
+			se(m == 1){
+            escreva("R$")
+       					  }
+ 			escreva(materiais[c][m],"\t")
+        	              }
+            escreva("Qta ",entrega[l][c+1],"\n")
 
+		}
+	   }
+	  }
 
-      escreva("Valor total: ",valTotal)
+      escreva("\nValor total: \n",valTotal, "\n\n\n\n\n\n\n\n\n\n\n\n")
+
+      Opcao()
   }
+//fim função listagem
+	
 	funcao inicio(){
 
 	escreva("            Cadastro do Orçamento            \n\n")
@@ -270,8 +337,8 @@ cadastroMateriais()
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 757; 
- * @DOBRAMENTO-CODIGO = [50];
+ * @POSICAO-CURSOR = 1443; 
+ * @DOBRAMENTO-CODIGO = [56, 61, 70, 109, 152, 312];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {pessoa, 14, 8, 6}-{endereco, 15, 8, 8}-{entrega, 16, 8, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
